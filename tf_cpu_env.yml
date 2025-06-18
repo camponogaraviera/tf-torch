@@ -1,0 +1,13 @@
+name: tf_cpu_env
+channels:
+  - conda-forge
+dependencies:
+  - python==3.10
+  - pip:
+      - numpy==1.26.0
+      - tensorflow-cpu==2.14.0
+      - jupyter==1.0.0
+      - matplotlib==3.8.3
+      - scikit-learn==1.2.2
+      - pydot==1.4.2
+      - graphviz==0.20.1

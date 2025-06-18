@@ -1,0 +1,15 @@
+name: tf_gpu_env
+channels:
+  - conda-forge
+  - nvidia
+dependencies:
+  - python==3.10
+  - cudatoolkit=11.2.2
+  - pip:
+      - numpy==1.26.0
+      - tensorflow==2.9
+      - jupyter==1.0.0
+      - matplotlib==3.8.3
+      - scikit-learn==1.2.2
+      - pydot==1.4.2
+      - graphviz==0.20.1

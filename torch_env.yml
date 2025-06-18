@@ -1,0 +1,13 @@
+name: torch_env
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python==3.10
+  - pytorch==2.2.0
+  - torchvision==0.17.0
+  - cudatoolkit==11.0.221
+  - jupyter==1.0.0
+  - matplotlib
+  - pip:
+      - torchsummary
