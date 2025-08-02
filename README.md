@@ -1,13 +1,12 @@
 <!-- Shields: -->
-
-[![Python](https://img.shields.io/badge/Python-3.10-informational)](https://www.python.org/downloads/source/)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow_CPU-2.14.0-%23FF6F00)](https://www.tensorflow.org/install/source?#cpu)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow_GPU-2.9-%23FF6F00)](https://www.tensorflow.org/install/source_windows?#gpu)
-[![Torch](https://img.shields.io/badge/Torch-2.2.0-6133BD)](https://pytorch.org/)
+[![Python](https://img.shields.io/badge/Python-3.11.0-informational)](https://www.python.org/downloads/source/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow_CPU-2.17.0-%23FF6F00)](https://www.tensorflow.org/install/source#cpu)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow_GPU-2.17.0-%23FF6F00)](https://www.tensorflow.org/install/source#gpu)
+[![Torch](https://img.shields.io/badge/Torch-2.7.1-6133BD)](https://pytorch.org/)
 
 <div align='center'>
-  <h1> TensorFlow & PyTorch API </h1>
-  <h1> Tutorial </h1>
+  <h1> TensorFlow & PyTorch </h1>
+  <h1> API Tutorial </h1>
 </div>
 
 # Table of Contents
@@ -17,27 +16,46 @@
 
 # Setting up the development environment
 
-- Torch
+Note: One should match the TensorFlow/PyTorch version with its respective CUDA version according to the available GPU.
+The following conda environments work for NVIDIA L40S GPUs with CUDA version ≤ 12.4.
+
+- Check GPUs:
 
 ```bash
-conda env create -f torch_env.yml && conda activate torch_env
+nvidia-smi
 ```
 
-- TF-CPU
+- PyTorch Env.:
+
+```bash
+conda env create -f torch_env.yml && conda activate torch-env
+```
+
+Check installation:
+
+```bash
+python -c "import torch; [print(f'GPU {i}: {torch.cuda.get_device_name(i)}') for i in range(torch.cuda.device_count())]"
+```
+`
+GPU 0: NVIDIA L40S
+GPU 1: NVIDIA L40S
+`
+
+- TensorFlow-CPU Env.:
   
 ```bash
-conda env create -f tf_cpu_env.yml && conda activate tf_cpu_env
+conda env create -f tf_cpu_env.yml && conda activate tf-cpu-env
 ```
 
-- TF-GPU
+- TensorFlow-GPU Env.:
 
 ```bash
-conda env create -f tf_gpu_env.yml && conda activate tf_gpu_env
+conda env create -f tf_gpu_env.yml && conda activate tf-gpu-env
 ```
 
-Check GPU:
+Check installation:
 
 ```bash
 python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 ```
-`>>> [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]`
+`[PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU'), PhysicalDevice(name='/physical_device:GPU:1', device_type='GPU')]`
