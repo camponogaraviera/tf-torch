@@ -1,4 +1,5 @@
 <!-- Shields: -->
+
 [![Python](https://img.shields.io/badge/Python-3.11.0-informational)](https://www.python.org/downloads/source/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow_CPU-2.17.0-%23FF6F00)](https://www.tensorflow.org/install/source#cpu)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow_GPU-2.17.0-%23FF6F00)](https://www.tensorflow.org/install/source#gpu)
@@ -16,8 +17,7 @@
 
 # Setting up the development environment
 
-Note: One should match the TensorFlow/PyTorch version with its respective CUDA version according to the available GPU.
-The following conda environments work for NVIDIA L40S GPUs with CUDA version ≤ 12.4.
+Note: One should ensure that the versions of TensorFlow or PyTorch are compatible with both the Python version and the CUDA version supported by the system's GPU drivers. The following install works for an NVIDIA L40S 45GB GPU with Driver version 550.127.08, which is backward-compatible with earlier CUDA versions (e.g., 11.8).
 
 - Check GPUs:
 
@@ -36,13 +36,14 @@ Check installation:
 ```bash
 python -c "import torch; [print(f'GPU {i}: {torch.cuda.get_device_name(i)}') for i in range(torch.cuda.device_count())]"
 ```
-`
+
+```bash
 GPU 0: NVIDIA L40S
 GPU 1: NVIDIA L40S
-`
+```
 
 - TensorFlow-CPU Env.:
-  
+
 ```bash
 conda env create -f tf_cpu_env.yml && conda activate tf-cpu-env
 ```
@@ -58,4 +59,5 @@ Check installation:
 ```bash
 python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 ```
+
 `[PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU'), PhysicalDevice(name='/physical_device:GPU:1', device_type='GPU')]`
