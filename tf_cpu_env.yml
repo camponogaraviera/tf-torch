@@ -1,0 +1,27 @@
+name: tf-cpu-env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python==3.11.0
+  - jupyter==1.1.1
+  - matplotlib==3.10.3
+  - numpy==2.3.2
+  - pip==25.1.1
+  - pip:
+      - tensorflow-cpu==2.17.0
+      - pydot==4.0.1
+      - graphviz==0.21
+      
+# ==============================================
+# Command-line Interface (CLI):
+
+# To create this environment: conda env create -f tf_cpu_env.yml
+# To activate the environment: conda activate <env-name>
+# To list all environments: conda env list
+# To show env. info: conda info
+# To show installed packages: conda list
+# To list a package info: conda list <package_name>
+# To remove the env.: conda remove -yn <env_name> --all
+# Future updates: conda env update -n <env_name> --file environment.yml --prune && conda activate <env_name> && pip install --no-deps -e -v .
+# ==============================================
