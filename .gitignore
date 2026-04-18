@@ -1,0 +1,8 @@
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# TensorFlow
+model.png
+
+# Torch
+data/
